@@ -56,10 +56,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 systemctl enable bluetooth
 useradd -mG wheel $USER
+usermod -aG sudo $USER
 echo "${USER}:${PASSWORD}" | chpasswd
 echo "root:${ROOTPASS}" | chpasswd
 
 cd /home/ster
-git clone https://github.com/Sterliph/arch.git
-
-echo "Just uncomment wheel into sudoers with visudo and reboot system, please."
+git clone https://github.com/Sterliph/custom_setup_arch.git
